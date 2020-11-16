@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onPageSelected(position: Int) {
+                bottom_navigation_main.menu.getItem(position).isChecked = true
             }
 
             override fun onPageScrollStateChanged(state: Int) {

@@ -7,4 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray_content_text">#a3a3a3</color>
+    <color name="gray_scraped_number">#b0b0b0</color>
 </resources>

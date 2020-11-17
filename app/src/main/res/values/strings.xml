@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">27thAndroidJoint</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="firstFeedTitle">퇴근하고 한강에서 만나요, 한강 취미 5</string>
+    <string name="firstFeedContent">남는 시간에 뭐하지?</string>
+
+    <string name="secondFeedTitle">가을향 가득한 전어요리 먹으러 가려면...</string>
+    <string name="secondFeedContent">오늘은 뭘 먹지? 전어를 먹을까 맛있겠지 전어</string>
+
+    <string name="thirdFeedTitle">선선해서 딱 좋은 아차산 나홀로 등산</string>
+    <string name="thirdFeedContent">건강한 아웃도어 라이프</string>
+
+    <string name="fourthFeedTitle">퇴근하고 한강에서 만나요, 한강 취미 5</string>
+    <string name="fourthFeedContent">남는 시간에 뭐하지?</string>
+
 </resources>

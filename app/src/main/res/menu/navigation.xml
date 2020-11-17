@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:icon="@drawable/frame_39"
+        android:icon="@drawable/tabbar_icn_home"
         android:title="Home"/>
     <item
         android:id="@+id/posting"
-        android:icon="@drawable/tabbar_btn_list"
+        android:icon="@drawable/tabbar_icn_list"
         android:title="Posting"/>
     <item
         android:id="@+id/mypage"
-        android:icon="@drawable/frame_40"
+        android:icon="@drawable/tabbar_icn_profile"
         android:title="MyPage"/>
 </menu>

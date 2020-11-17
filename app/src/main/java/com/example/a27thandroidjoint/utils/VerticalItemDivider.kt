@@ -1,4 +1,4 @@
-package com.example.a27thandroidjoint
+package com.example.a27thandroidjoint.utils
 
 import android.graphics.Rect
 import androidx.recyclerview.widget.RecyclerView

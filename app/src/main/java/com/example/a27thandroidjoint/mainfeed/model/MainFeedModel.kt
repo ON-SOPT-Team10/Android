@@ -1,4 +1,4 @@
-package com.example.a27thandroidjoint
+package com.example.a27thandroidjoint.mainfeed.model
 
 class MainFeedModel(
         val feedImage: Int,

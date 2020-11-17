@@ -1,10 +1,12 @@
-package com.example.a27thandroidjoint
+package com.example.a27thandroidjoint.mainfeed.viewholder
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.a27thandroidjoint.mainfeed.model.MainFeedModel
+import com.example.a27thandroidjoint.R
 
 class MainFeedViewHolder(itemView:View): RecyclerView.ViewHolder(itemView){
     val imageViewFeed = itemView.findViewById<ImageView>(R.id.imageview_feed)

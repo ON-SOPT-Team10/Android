@@ -1,9 +1,12 @@
-package com.example.a27thandroidjoint
+package com.example.a27thandroidjoint.mainfeed.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.a27thandroidjoint.R
+import com.example.a27thandroidjoint.mainfeed.model.MainFeedModel
+import com.example.a27thandroidjoint.mainfeed.viewholder.MainFeedViewHolder
 
 class MainFeedAdapter(private val context: Context) : RecyclerView.Adapter<MainFeedViewHolder>() {
     var mainFeedDatas = mutableListOf<MainFeedModel>()

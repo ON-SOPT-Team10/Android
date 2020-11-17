@@ -32,6 +32,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/applesdgothic_bold"
         android:textSize="18sp"
+        android:textColor="@color/black"
         android:text="this is title"
         android:layout_marginLeft="26dp"
         android:layout_marginTop="17dp"

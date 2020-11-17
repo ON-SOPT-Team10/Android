@@ -1,10 +1,14 @@
-package com.example.a27thandroidjoint
+package com.example.a27thandroidjoint.mainfeed
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.a27thandroidjoint.mainfeed.adapter.MainFeedAdapter
+import com.example.a27thandroidjoint.mainfeed.model.MainFeedModel
+import com.example.a27thandroidjoint.R
+import com.example.a27thandroidjoint.utils.VerticalItemDivider
 import kotlinx.android.synthetic.main.fragment_posting.*
 
 class PostingFragment : Fragment() {

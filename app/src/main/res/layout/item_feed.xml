@@ -66,8 +66,8 @@
         android:id="@+id/imageview_bookmark"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginLeft="5dp"
-        android:background="@drawable/list_btn_bookmark_1"
+        android:layout_marginLeft="6dp"
+        android:background="@drawable/ic_baseline_bookmark_border_24"
         app:layout_constraintBottom_toBottomOf="@id/textview_content"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintStart_toStartOf="@id/guideline"
@@ -78,14 +78,16 @@
         android:id="@+id/textview_scrap_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="777"
-        android:fontFamily="15sp"
-        android:textSize="15sp"
+        android:fontFamily="@font/applesdgothic_medium"
         android:includeFontPadding="false"
+        android:text="777"
         android:textColor="@color/gray_scraped_number"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/imageview_bookmark"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toEndOf="@id/imageview_bookmark"
         app:layout_constraintTop_toTopOf="@id/imageview_bookmark"
-        app:layout_constraintBottom_toBottomOf="@id/imageview_bookmark"/>
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

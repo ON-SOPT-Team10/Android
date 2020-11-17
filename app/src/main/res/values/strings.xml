@@ -13,4 +13,7 @@
     <string name="fourthFeedTitle">퇴근하고 한강에서 만나요, 한강 취미 5</string>
     <string name="fourthFeedContent">남는 시간에 뭐하지?</string>
 
+    <string name="userName">박참새</string>
+    <string name="userEmail">sopt_id@gmail.com</string>
+
 </resources>

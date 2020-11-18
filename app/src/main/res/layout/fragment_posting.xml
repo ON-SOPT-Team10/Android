@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <!-- TODO: 승완's 작업공간 -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintlayout_picker"
@@ -19,7 +18,239 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/textView_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="45dp"
+                android:text="둘러보기"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:fontFamily="@font/roboto_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="33dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/textView_user" />
+
+            <TextView
+                android:id="@+id/textView_pick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="참새님을 위한 Pick"
+                android:includeFontPadding="false"
+                android:textSize="22sp"
+                android:fontFamily="@font/applesdgothic_bold"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerview_user"
+                app:layout_constraintStart_toStartOf="@+id/textView_user"
+                android:layout_marginTop="45dp"/>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintlayout_pick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/textView_pick"
+                app:layout_constraintTop_toBottomOf="@+id/textView_pick">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/firstRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <Button
+                        android:id="@+id/button_pick1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/pick_unclick"
+                        android:fontFamily="@font/applesdgothic_regular"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingLeft="14dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="14dp"
+                        android:paddingBottom="10dp"
+                        android:text="전체"
+                        android:textColor="#929292"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/button_pick2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/pick_unclick"
+                        android:fontFamily="@font/applesdgothic_regular"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingLeft="14dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="14dp"
+                        android:paddingBottom="10dp"
+                        android:text="추천"
+                        android:textColor="#929292"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toEndOf="@id/button_pick1"
+                        app:layout_constraintTop_toTopOf="@+id/button_pick1" />
+
+                    <Button
+                        android:id="@+id/button_pick3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/pick_unclick"
+                        android:fontFamily="@font/applesdgothic_regular"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingLeft="14dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="14dp"
+                        android:paddingBottom="10dp"
+                        android:text="맛집추천"
+                        android:textColor="#929292"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toEndOf="@id/button_pick2"
+                        app:layout_constraintTop_toTopOf="@+id/button_pick2" />
+
+                    <Button
+                        android:id="@+id/button_pick4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/pick_unclick"
+                        android:fontFamily="@font/applesdgothic_regular"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingLeft="14dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="14dp"
+                        android:paddingBottom="10dp"
+                        android:text="아웃도어"
+                        android:textColor="#929292"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toEndOf="@id/button_pick3"
+                        app:layout_constraintTop_toTopOf="@+id/button_pick3" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/constraintlayout_pick"
+                    app:layout_constraintTop_toBottomOf="@+id/firstRow"
+                    tools:ignore="MissingConstraints">
+
+                    <Button
+                        android:id="@+id/button_pick5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/pick_unclick"
+                        android:fontFamily="@font/applesdgothic_regular"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingLeft="14dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="14dp"
+                        android:paddingBottom="10dp"
+                        android:text="반려동물"
+                        android:textColor="#929292"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/button_pick6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/pick_unclick"
+                        android:fontFamily="@font/applesdgothic_regular"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingLeft="14dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="14dp"
+                        android:paddingBottom="10dp"
+                        android:text="가족"
+                        android:textColor="#929292"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/button_pick5"
+                        app:layout_constraintStart_toEndOf="@id/button_pick5"
+                        app:layout_constraintTop_toTopOf="@+id/button_pick5" />
+
+                    <Button
+                        android:id="@+id/button_pick7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/pick_unclick"
+                        android:fontFamily="@font/applesdgothic_regular"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingLeft="14dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="14dp"
+                        android:paddingBottom="10dp"
+                        android:text="나혼자산다"
+                        android:textColor="#929292"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/button_pick6"
+                        app:layout_constraintStart_toEndOf="@id/button_pick6"
+                        app:layout_constraintTop_toTopOf="@+id/button_pick6" />
+
+                    <Button
+                        android:id="@+id/button_pick8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="7dp"
+                        android:background="@drawable/pick_unclick"
+                        android:fontFamily="@font/applesdgothic_regular"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingLeft="14dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="14dp"
+                        android:paddingBottom="10dp"
+                        android:text="YOLO"
+                        android:textColor="#929292"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/button_pick7"
+                        app:layout_constraintStart_toEndOf="@id/button_pick7"
+                        app:layout_constraintTop_toTopOf="@+id/button_pick7" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <!--TODO: 평화's 작업공간 -->
@@ -32,7 +263,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="27dp">
+            android:layout_marginTop="12dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview_feed"
@@ -47,6 +278,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

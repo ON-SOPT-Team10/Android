@@ -1,21 +1,16 @@
-package com.example.a27thandroidjoint.mainfeed
+package com.example.a27thandroidjoint.mainfeed.fragment
 
 import android.graphics.Color
-import android.graphics.Typeface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.LinearLayout
 import androidx.core.content.res.ResourcesCompat
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.a27thandroidjoint.mainfeed.adapter.MainFeedAdapter
 import com.example.a27thandroidjoint.mainfeed.model.MainFeedModel
 import com.example.a27thandroidjoint.R
-import com.example.a27thandroidjoint.R.drawable.pick_onclick
 import com.example.a27thandroidjoint.mainfeed.adapter.UserAdapeter
 import com.example.a27thandroidjoint.mainfeed.model.UserModel
 import com.example.a27thandroidjoint.utils.HorizontalItemDivider
@@ -38,6 +33,8 @@ class PostingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        recyclerview_feed.isNestedScrollingEnabled = false
 
         setUserAdapter(view)
         loadUserDatas()

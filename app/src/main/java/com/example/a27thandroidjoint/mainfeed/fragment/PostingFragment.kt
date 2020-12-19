@@ -1,21 +1,33 @@
 package com.example.a27thandroidjoint.mainfeed.fragment
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import com.example.a27thandroidjoint.mainfeed.adapter.MainFeedAdapter
 import com.example.a27thandroidjoint.mainfeed.model.MainFeedModel
 import com.example.a27thandroidjoint.R
 import com.example.a27thandroidjoint.mainfeed.adapter.UserAdapeter
 import com.example.a27thandroidjoint.mainfeed.model.UserModel
+import com.example.a27thandroidjoint.network.RetrofitClient
+import com.example.a27thandroidjoint.network.RetrofitService
+import com.example.a27thandroidjoint.network.model.MainResponseData
 import com.example.a27thandroidjoint.utils.HorizontalItemDivider
 import com.example.a27thandroidjoint.utils.VerticalItemDivider
 import kotlinx.android.synthetic.main.fragment_posting.*
+import okhttp3.ResponseBody
+import org.json.JSONObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 
 class PostingFragment : Fragment() {
     lateinit var mainFeedAdapter: MainFeedAdapter
@@ -37,7 +49,7 @@ class PostingFragment : Fragment() {
         recyclerview_feed.isNestedScrollingEnabled = false
 
         setUserAdapter(view)
-        loadUserDatas()
+        loadUserDatas(view)
 
         setFeedAdapter(view)
         loadMainFeedDatas()
@@ -57,25 +69,24 @@ class PostingFragment : Fragment() {
         recyclerview_feed.addItemDecoration(VerticalItemDivider(46))
     }
 
-    private fun loadUserDatas(){
+    private fun loadUserDatas(view: View){
         var userDatas = mutableListOf<UserModel>()
 
-        userDatas.apply {
-            add(
-                UserModel(R.drawable.list_btn_curator_1, "할리스커피")
-            )
-            add(
-                UserModel(R.drawable.list_btn_curator_2, "동역사거주자")
-            )
-            add(
-                UserModel(R.drawable.list_btn_curator_3, "뮤지컬볼래")
-            )
-            add(
-                UserModel(R.drawable.list_btn_curator_4, "퇴근하고싶다")
-            )
-        }
-        userAdapeter.userDatas = userDatas
-        userAdapeter.notifyDataSetChanged()
+        val call : Call<MainResponseData> = RetrofitClient.create(RetrofitService::class.java).getMain()
+        call.customEnqueue(
+            onSuccess = { mainResponseData ->
+                userDatas.clear()
+                val storiesData = mainResponseData.data.stories
+                for(i in storiesData.indices){
+                    userDatas.add(UserModel(storiesData[i].storyImage, storiesData[i].storyTitle))
+                }
+                userAdapeter.userDatas = userDatas
+                userAdapeter.notifyDataSetChanged()
+            },
+            onError = {
+                showError(view.context, it)
+            }
+        )
     }
 
     private fun loadMainFeedDatas(){
@@ -144,5 +155,28 @@ class PostingFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun<ResponseType> Call<ResponseType>.customEnqueue(
+        onSuccess : (ResponseType) -> Unit,
+        onError : (ResponseBody?) -> Unit = {}
+    ){
+        this.enqueue(object : Callback<ResponseType>{
+            override fun onResponse(call: Call<ResponseType>, response: Response<ResponseType>) {
+                response.takeIf { it.isSuccessful }
+                    ?.body()
+                    ?.let{
+                        onSuccess(it)
+                    }?: onError(response.errorBody())
+            }
+            override fun onFailure(call: Call<ResponseType>, t: Throwable) {
+            }
+        })
+    }
+
+    fun showError(context: Context, error : ResponseBody?){
+        val e = error ?: return
+        val ob = JSONObject(e.string())
+        Toast.makeText(context, ob.getString("message"), Toast.LENGTH_SHORT).show()
     }
 }
